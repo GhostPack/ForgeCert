@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForgeCert", "ForgeCert\ForgeCert.csproj", "{BD346689-8EE6-40B3-858B-4ED94F08D40A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD346689-8EE6-40B3-858B-4ED94F08D40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD346689-8EE6-40B3-858B-4ED94F08D40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD346689-8EE6-40B3-858B-4ED94F08D40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD346689-8EE6-40B3-858B-4ED94F08D40A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A8145DB-1E71-4A8D-9802-CC4DDACCF4D9}
+	EndGlobalSection
+EndGlobal
