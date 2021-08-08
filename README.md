@@ -103,6 +103,8 @@ The TypeLib GUID of ForgeCert is **bd346689-8ee6-40b3-858b-4ed94f08d40a**. This 
 
 See `PREVENT1`, `DETECT3`, and `DETECT5` in our [whitepaper](https://specterops.io/assets/resources/Certified_Pre-Owned.pdf) for prevention and detection guidance.
 
+[Fabian Bader](https://twitter.com/fabian_bader) published a [great post on how to mitigate many uses of "Golden Certificates"](https://cloudbrothers.info/en/golden-certificate-ocsp/) through OSCP tweaks. Note thought that in the **Final Thoughts** section he mentions `This method is not bulletproof at all. Since the attacker is in charge of the certificate creation process, she could just change the serial number to a valid one.` This was implemented in [his PR](https://github.com/GhostPack/ForgeCert/commit/a202e03d7cee48413514c8659ad042a7f546d94b), though remember that by default the serial number will be randomized, meaning the OSCP prevention should work in many cases and is worth implementing in our opinion.
+
 We believe there may opportunities to build Yara/other detection rules for types of forged certificates this project produces - if any defensive researchers find a good way to signature these files, please let us know and we will update the Yara rules/defensive guidance here.
 
 
