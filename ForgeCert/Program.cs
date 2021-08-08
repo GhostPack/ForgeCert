@@ -43,7 +43,8 @@ namespace ForgeCert
                 options.SubjectAltName,
                 caKeyPair,
                 subjectKeyPair.Public,
-                options.CRLPath
+                options.CRLPath,
+                options.SerialNumber
             );
 
             PrintCertInfo("\nForged Certificate Information:", cert);
@@ -102,7 +103,8 @@ namespace ForgeCert
             X509Name issuer, string subject, string subjectAltName,
             KeyPair issuerKeyPair,
             AsymmetricKeyParameter subjectPublic,
-            string CRL = "")
+            string CRL = "",
+            BigInteger SerialNumber = null)
         {
             ISignatureFactory signatureFactory;
             if (issuerKeyPair.Key is ECPrivateKeyParameters)
@@ -121,8 +123,15 @@ namespace ForgeCert
             var certGenerator = new X509V3CertificateGenerator();
             certGenerator.SetIssuerDN(issuer);
             certGenerator.SetSubjectDN(new X509Name(subject));
-            certGenerator.SetSerialNumber(BigIntegers.CreateRandomInRange(BigInteger.One, BigInteger.Two.Pow(128), Random));
-            
+
+            if (SerialNumber == null)
+            {
+                certGenerator.SetSerialNumber(BigIntegers.CreateRandomInRange(BigInteger.One, BigInteger.Two.Pow(128), Random));
+            } else
+            {
+                certGenerator.SetSerialNumber(SerialNumber);
+            }
+
             // Yes, the end lifetime can be changed easily, up to the lifetime of the CA certificate being used to forge
             certGenerator.SetNotAfter(DateTime.UtcNow.AddYears(1));
             

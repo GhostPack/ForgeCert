@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using Org.BouncyCastle.Math;
 
 namespace ForgeCert
 {
@@ -24,5 +25,8 @@ namespace ForgeCert
 
         [Option("CRL", Required = false, HelpText = "ldap path to a CRL for the forged certificate")]
         public string CRLPath { get; set; }
+
+        [Option("Serial", Required = false, HelpText = "serial number for the forged certificate")]
+        public BigInteger SerialNumber { get; set; }
     }
 }
