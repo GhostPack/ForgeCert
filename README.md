@@ -94,6 +94,7 @@ Done. Saved forged certificate to localadmin.pfx with the password 'NewPassword1
 
 This forgery can be done on an attacker-controlled system, and the resulting certificate can be used with [Rubeus](https://github.com/GhostPack/Rubeus) to request a TGT (and/or retrieve the user's NTLM ;)
 
+If you get the `KRB-ERROR (62) : KDC_ERR_CLIENT_NOT_TRUSTED` when requesting the TGT with Rubeus, try forging your certificate with a CRL (`--CRL <LDAP_PATH>`).
 
 ## Defensive Considerations
 
